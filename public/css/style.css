@@ -1,0 +1,27 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body {
+	width: 100%;
+	height: 500px;
+}
+.Header, .Main, .Footer {
+	float: left;
+	width: 100%;
+	height: 160px;
+}
+
+.Header {
+	background: blue;
+}
+
+.Main {
+	background: red;
+}
+
+.Footer {
+	background: green;
+}

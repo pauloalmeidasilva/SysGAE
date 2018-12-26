@@ -1,0 +1,22 @@
+{
+    "name": "sysgae/src",
+    "description": "SysGAE - Sistema de Gerenciamento Administrativo Escolar",
+    "authors": [
+        {
+            "name": "Paulo Ricardo Almeida da Silva",
+            "email": "paulocdjsilva@gmail.com"
+        }
+    ],
+    
+    "require": {
+        "phpmailer/phpmailer": "^6.0",
+        "dompdf/dompdf": "^0.8.2"
+    },
+
+    "autoload": {
+    	"psr-4": {
+    		"App\\":"../app/",
+    		"Src\\":"../src/"
+    	}
+    }
+}
