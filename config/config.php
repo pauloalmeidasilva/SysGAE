@@ -1,7 +1,7 @@
 <?php
 
 #Arquivos diretórios raízes
-$PastaInterna="sysgae2.0/";
+$PastaInterna="sysgae/";
 
 define('DIRPAGE',"http://{$_SERVER['HTTP_HOST']}/{$PastaInterna}");
 

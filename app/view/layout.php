@@ -8,19 +8,13 @@
     <meta name="description" content="<?php echo $this->getDescription(); ?>">
     <meta name="keywords" content="<?php echo $this->getKeywords(); ?>">
     <title><?php echo $this->getTitle(); ?></title>
-    <link rel="stylesheet" href="<?php echo DIRCSS.'Style.css' ?>">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="<?php echo DIRCSS.'Style.css' ?>">-->
     <?php echo $this->addHead(); ?>
 </head>
 
 <body>
-<div class="Nav">
-    <a href="<?php echo DIRPAGE; ?>">Home</a>
-    <a href="<?php echo DIRPAGE.'contato'; ?>">Contato</a>
-</div>
-
 <div class="Header">
-    <img src="<?php echo DIRIMG.'Banner.jpg'; ?>" alt="Banner"><br>
-    TEL.: (XX) XXXXXXXX <br>
     <?php echo $this->addHeader(); ?>
 </div>
 
@@ -29,9 +23,11 @@
 </div>
 
 <div class="Footer">
-    2019 - TODOS OS DIREITOS RESERVADOS WEBDESIGN EM FOCO <br>
     <?php echo $this->addFooter(); ?>
 </div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 
 </html>

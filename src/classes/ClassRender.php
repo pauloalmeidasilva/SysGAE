@@ -56,4 +56,5 @@ class ClassRender{
             include(DIRREQ."app/view/{$this->getDir()}/Footer.php");
         }
     }
+}
 ?>
