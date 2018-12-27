@@ -8,6 +8,8 @@
     <meta name="description" content="<?php echo $this->getDescription(); ?>">
     <meta name="keywords" content="<?php echo $this->getKeywords(); ?>">
     <title><?php echo $this->getTitle(); ?></title>
+    <link rel="icon" href="<?php echo DIRIMG.'logo.png'; ?>">
+    <link rel="sortcut icon" href="<?php echo DIRIMG.'logo.png'; ?>">;
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!--<link rel="stylesheet" href="<?php echo DIRCSS.'Style.css' ?>">-->
     <?php echo $this->addHead(); ?>
