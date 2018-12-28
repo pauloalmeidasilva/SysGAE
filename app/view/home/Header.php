@@ -1,27 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-    	<span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-    	<ul class="navbar-nav mr-auto">
-    		<li class="nav-item active">
-    			<a class="nav-link" href="#">Home <span class="sr-only">(atual)</span></a>
-    		</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">Link</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link disabled" href="#">Desativado</a>
-			</li>
-		</ul>
-    </div>
-</nav>
-
-<!-- Header -->
-<header id="headers">
-	<div class="logo">
-		<a href="#">
-			<img src="<?php echo DIRIMG.'logo.png'?>" alt="">
-		</a>
-	</div>
-</header>
+<div id='loader'>
+	<div class="spinner"></div>
+</div>
+<script type="text/javascript" src="<?php echo DIRJS.'carregamento.js'; ?>"></script>
