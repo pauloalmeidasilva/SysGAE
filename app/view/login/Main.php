@@ -3,7 +3,7 @@
 		<div class="col-md-9">
 			<img class="align-middle" src="<?php echo DIRIMG.'logo.png'; ?>" alt="" style="">
 	    </div>
-	    <div class="col-md-3 col-sm-12 align-items-center login" style='min-width: 320px;'>
+	    <div class="col-md-3 col-sm-12 align-items-center login" style='min-width: 320px;background-color: #16e5e1'>
 	        <form>
 		        	<div class="form-group">
 		        		<label for="prontuario"><h5>Prontuário</h5></label>

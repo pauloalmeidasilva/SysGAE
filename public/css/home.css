@@ -2946,7 +2946,7 @@
 
 			}
 
-	#header {
+	#headers {
 		color: #a6a6a6;
 		cursor: default;
 		position: relative;
@@ -2954,12 +2954,12 @@
 		z-index: 10001;
 	}
 
-		#header > .logo {
+		#headers > .logo {
 			margin: 0 0 4rem 0;
 			padding: 0;
 		}
 
-			#header > .logo a {
+			#headers > .logo a {
 				font-size: 4rem;
 				font-weight: 700;
 				color: #333;
@@ -2967,7 +2967,7 @@
 				line-height: 1rem;
 			}
 
-			#header > .logo span {
+			#headers > .logo span {
 				font-weight: 300;
 				font-size: 1rem;
 				display: block;
@@ -2987,11 +2987,11 @@
 
 	@media screen and (max-width: 736px) {
 
-		#header > .logo {
+		#headers > .logo {
 			margin: 0 0 2rem 0;
 		}
 
-			#header > .logo a {
+			#headers > .logo a {
 				font-size: 3rem;
 			}
 
