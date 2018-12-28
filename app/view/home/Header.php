@@ -1,5 +1,8 @@
-<div id='loader'>
-	<div class="spinner"></div>
-</div>
-
-<script type="text/javascript" src="<?php echo DIRJS.'carregamento.js'; ?>"></script>
+<!-- Header -->
+<header id="header">
+	<div class="logo">
+		<a href="#">
+			<img src="<?php echo DIRIMG.'logo.png'?>" alt="">
+		</a>
+	</div>
+</header>
