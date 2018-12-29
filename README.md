@@ -1,15 +1,18 @@
 # SysGAE
 
 
-## Descrição
-Projeto final para conclusão do curso Tecnologia em análise e Desenvolvimento de Sistemas.
-Este projeto consiste num gerenciador escolar, dando a possibilidade ao usuário de domínio em realizar matrículas, transferências, relatórios de cunho administrativo e pedagógico, bem como agilizar na emissão da documentação escolar discente.
+## Descriï¿½ï¿½o
+Projeto final para conclusï¿½o do curso Tecnologia em anï¿½lise e Desenvolvimento de Sistemas.
+Este projeto consiste num gerenciador escolar, dando a possibilidade ao usuï¿½rio de domï¿½nio em realizar matrï¿½culas, transferï¿½ncias, relatï¿½rios de cunho administrativo e pedagï¿½gico, bem como agilizar na emissï¿½o da documentaï¿½ï¿½o escolar discente.
 
-## Característica
+## Caracterï¿½stica
 Linguagens utilizadas:
 * HTML 5
 * Javascript
 * PHP
 * MySQL
 
-Padrão utilizado: MVC
+Padrï¿½o utilizado: MVC
+
+##RestriÃ§Ãµes
+Este sistema serÃ¡ desenvolvido exclusivamente para Desktop.
