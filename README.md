@@ -14,5 +14,5 @@ Linguagens utilizadas:
 
 Padrão utilizado: MVC
 
-##Restrições
+## Restrições
 Este sistema será desenvolvido exclusivamente para Desktop, não dando enfoque para dispositivos móveis
