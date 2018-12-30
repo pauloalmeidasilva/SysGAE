@@ -1,4 +1,4 @@
-# SysGAE
+# Sistema de Gerenciamento Administrativo Escolar - SysGAE
 
 
 ## Descrição
@@ -15,4 +15,4 @@ Linguagens utilizadas:
 Padrão utilizado: MVC
 
 ##Restrições
-Este sistema será desenvolvido exclusivamente para Desktop.
+Este sistema será desenvolvido exclusivamente para Desktop, não dando enfoque para dispositivos móveis
