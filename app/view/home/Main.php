@@ -1,31 +1,18 @@
-<div class="row">
-	<div class="col m9" style='background-image: url("<?php echo DIRIMG.'background.png'; ?>");'>
-		<img class="align-middle" src="<?php echo DIRIMG.'logo.png'; ?>" alt="" style="">
-    </div>
-    <div class="col m3 s12 login offset-m9 z-depth-5" style='background-color: #fff; '>
-        <form>
-        	<div class="">
-        		<h5 class="center-align">Login</h5>
-	        	<div class="row">
-		        	<div class="input-field col s12">
-		        		<i class="material-icons prefix">account_box</i>
-		        		<input type="text" class="form-control" id="prontuario">
-		        		<label for="prontuario">Prontuário</label>
-		        	</div>
-		        </div>
-		        <div class="row">
-		        	<div class="input-field col s12">
-		        		<i class="material-icons prefix">lock</i>
-		        		<label for="password">Senha</label>
-		        		<input type="password" class="form-control" id="password">
-		        	</div>
-		        </div>
-		        <div class="row">
-		        	<div class="col s12">
-	        			<button class="btn waves-effect waves-light">Iniciar</button>
-	        		</div>
-		        </div>
-		    </div>	
-        </form>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-3 shadow-lg" style='background-color: #fff; position: absolute; height: 100%; padding-top: 175px;'>
+	        <form>
+	        	<h3 class="text-center">Login</h3>
+	        	<br>
+	        	<input type="text" class="form-control" id="prontuario" placeholder="Prontuário">
+	        	<br>
+				<input type="password" class="form-control" id="password" placeholder="Senha">
+				<br>
+				<button class="btn btn-success mx-auto d-block" style="width: 100px;">Iniciar</button>				
+	        </form>
+	    </div>
+		<div class="col-sm-9 offset-sm-3">
+			<img class="rounded mx-auto d-block" src="logo.png" alt="" style="">
+    	</div>
     </div>
 </div>

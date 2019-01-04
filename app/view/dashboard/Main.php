@@ -1,47 +1,39 @@
-<div class="col s10 offset-s2 grey lighten-3 dash-painel">
-			<div class="card-panel">
-				<table class="highlight"">
-		        <thead>
-		          <tr>
-		              <th>Name</th>
-		              <th>Item Name</th>
-		              <th>Item Price</th>
-		          </tr>
-		        </thead>
+	<!-- INÍCIO DA DASHBOARD -->
+	<div class="container-fluid">
+		<div class="row">
 
-		        <tbody>
-		          <tr>
-		            <td>Alvin</td>
-		            <td>Eclair</td>
-		            <td>$0.87</td>
-		          </tr>
-		          <tr>
-		            <td>Alan</td>
-		            <td>Jellybean</td>
-		            <td>$3.76</td>
-		          </tr>
-		          <tr>
-		            <td>Jonathan</td>
-		            <td>Lollipop</td>
-		            <td>$7.00</td>
-		          </tr>
-		          <tr>
-		            <td>Alvin</td>
-		            <td>Eclair</td>
-		            <td>$0.87</td>
-		          </tr>
-		          <tr>
-		            <td>Alan</td>
-		            <td>Jellybean</td>
-		            <td>$3.76</td>
-		          </tr>
-		          <tr>
-		            <td>Jonathan</td>
-		            <td>Lollipop</td>
-		            <td>$7.00</td>
-		          </tr>
-		        </tbody>
-		      </table>
-			</div>
+			<!-- INÍCIO DO MENU -->
+			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<h6><strong>Cadastros</strong></h6>
+					<ul class="nav flex-column">
+						<li class="nav-item"><a class="nav-link" href="#">Escolas</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Cargos</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Funcionários</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Alunos</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Séries</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Turmas</a></li>
+					</ul>
+					<br>
+					<h6><strong>Gerenciamento</strong></h6>
+					<ul class="nav flex-column">
+						<li class="nav-item"><a class="nav-link" href="#">Movimentação de Turmas</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Lançar Notas e Faltas</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Declarações</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Relatórios</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Resultados</a></li>
+					</ul>
+				</div>
+			</nav>
+			<!-- FIM DO MENU -->
+			
+			<!-- INÍCIO DO CONTEÚDO PRINCIPAL -->
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+				<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+					<h1 class="h2">Dashboard</h1>
+				</div>
+			</main>
+			<!-- FIM DO CONTEÚDO PRINCIPAL -->
 		</div>
 	</div>
+	<!-- FIM DA DASHBOARD -->

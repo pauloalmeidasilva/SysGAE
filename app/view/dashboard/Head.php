@@ -1,1 +1,3 @@
-<link rel="stylesheet" href=" <?php echo DIRCSS.'dashboard/template.css'; ?>">
+
+	<!-- CSS CUSTOMIZADAS -->
+	<link rel="stylesheet" href=" <?php echo DIRCSS.'dashboard.css'; ?>">

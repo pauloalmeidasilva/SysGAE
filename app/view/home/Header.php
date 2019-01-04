@@ -1,4 +1,5 @@
-<div id='loader'>
-	<div class="spinner"></div>
-</div>
-<script type="text/javascript" src="<?php echo DIRJS.'carregamento.js'; ?>"></script>
+	<!-- INÍCIO DO PRÉ-LOADER -->
+	<div id='loader'>
+		<div class="spinner"></div>
+	</div>
+	<!-- INÍCIO DO PRÉ-LOADER -->
