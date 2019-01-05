@@ -18,6 +18,7 @@ class ClassRoutes{
             ""=>"ControllerHome",
             "home"=>"ControllerHome",
             "dashboard"=>"ControllerDashboard",
+            "escola"=>"ControllerEscola",
             "contato"=>"ControllerContato"
         );
 

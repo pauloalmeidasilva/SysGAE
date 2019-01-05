@@ -3,19 +3,21 @@ namespace App\Model;
 
 use App\Model\ClassConexao;
 
-class ClassCadastro extends ClassConexao{
+class ClassEscola extends ClassConexao{
 
     private $Db;
 
     #Cadastrará os clientes no sistema
-    protected function cadastroClientes($Nome , $Sexo , $Cidade)
+    protected function cadastrarEscola($nome, $endereco, $bairro, $cidade, $estado, $telefone, $email)
     {
-        $Id=0;
-        $this->Db=$this->conexaoDB()->prepare("insert into teste values(:id , :nome , :sexo , :cidade)");
-        $this->Db->bindParam(":id",$Id,\PDO::PARAM_INT);
-        $this->Db->bindParam(":nome",$Nome,\PDO::PARAM_STR);
-        $this->Db->bindParam(":sexo",$Sexo,\PDO::PARAM_STR);
+        $this->Db=$this->conexaoDB()->prepare("INSERT INTO escola (esc_nome, esc_rua, esc_bairro, esc_cidade, esc_uf, esc_telefone, esc_email) VALUES (:nome, :endereco, :bairro, :cidade, :estado, :telefone, :email)");
+        $this->Db->bindParam(":nome",$nome,\PDO::PARAM_STR);
+        $this->Db->bindParam(":endereco",$endereco,\PDO::PARAM_STR);
+        $this->Db->bindParam(":bairro",$bairro,\PDO::PARAM_STR);
         $this->Db->bindParam(":cidade",$Cidade,\PDO::PARAM_STR);
+        $this->Db->bindParam(":estado",$estado,\PDO::PARAM_STR);
+        $this->Db->bindParam(":telefone",$telefone,\PDO::PARAM_STR);
+        $this->Db->bindParam(":email",$email,\PDO::PARAM_STR);
         $this->Db->execute();
     }
 

@@ -7,7 +7,7 @@
 				<div class="sidebar-sticky">
 					<h6><strong>Cadastros</strong></h6>
 					<ul class="nav flex-column">
-						<li class="nav-item"><a class="nav-link" href="#">Escolas</a></li>
+						<li class="nav-item"><a class="nav-link" href="<?php echo DIRPAGE.'escola'; ?>">Escolas</a></li>
 						<li class="nav-item"><a class="nav-link" href="#">Cargos</a></li>
 						<li class="nav-item"><a class="nav-link" href="#">Funcionários</a></li>
 						<li class="nav-item"><a class="nav-link" href="#">Alunos</a></li>
