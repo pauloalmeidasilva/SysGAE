@@ -8,11 +8,11 @@
 					<h6><strong>Cadastros</strong></h6>
 					<ul class="nav flex-column">
 						<li class="nav-item"><a class="nav-link" href="<?php echo DIRPAGE.'escola'; ?>">Escolas</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Cargos</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Funcionários</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Alunos</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Séries</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Turmas</a></li>
+						<li class="nav-item"><a class="nav-link" href="<?php echo DIRPAGE.'cargo'; ?>">Cargos</a></li>
+						<li class="nav-item"><a class="nav-link" href="<?php echo DIRPAGE.'funcionario'; ?>">Funcionários</a></li>
+						<li class="nav-item"><a class="nav-link" href="<?php echo DIRPAGE.'aluno'; ?>">Alunos</a></li>
+						<li class="nav-item"><a class="nav-link" href="<?php echo DIRPAGE.'serie'; ?>">Séries</a></li>
+						<li class="nav-item"><a class="nav-link" href="<?php echo DIRPAGE.'turma'; ?>">Turmas</a></li>
 					</ul>
 					<br>
 					<h6><strong>Gerenciamento</strong></h6>
