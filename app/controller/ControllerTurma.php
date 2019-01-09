@@ -2,9 +2,9 @@
 namespace App\Controller;
 
 use Src\Classes\ClassRender;
-use App\Model\ClassEscola;
+use App\Model\ClassTurma;
 
-class ControllerEscola extends ClassEscola{
+class ControllerTurma extends ClassTurma{
 
     protected $id;
     protected $nome;
@@ -21,10 +21,10 @@ class ControllerEscola extends ClassEscola{
     {
         if(count($this->parseUrl())==1) {
         $Render=new ClassRender();
-        $Render->setTitle("Escola");
-        $Render->setDescription("Cadastre suas escolas.");
-        $Render->setKeywords("cadastro de escolas, cadastro, escolas");
-        $Render->setDir("escola");
+        $Render->setTitle("Turma");
+        $Render->setDescription("Cadastre suas turmas.");
+        $Render->setKeywords("cadastro de turmas, cadastro, escolas");
+        $Render->setDir("turma");
         $Render->renderLayout();
     }
     }

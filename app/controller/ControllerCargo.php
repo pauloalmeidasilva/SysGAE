@@ -2,18 +2,13 @@
 namespace App\Controller;
 
 use Src\Classes\ClassRender;
-use App\Model\ClassEscola;
+use App\Model\ClassCargo;
 
-class ControllerEscola extends ClassEscola{
+class ControllerCargo extends ClassCargo{
 
     protected $id;
     protected $nome;
-    protected $endereco;
-    protected $bairro;
-    protected $cidade;
-    protected $estado;
-    protected $telefone;
-    protected $email;
+    protected $descricao;
 
     use \Src\Traits\TraitUrlParser;
 
@@ -21,10 +16,10 @@ class ControllerEscola extends ClassEscola{
     {
         if(count($this->parseUrl())==1) {
         $Render=new ClassRender();
-        $Render->setTitle("Escola");
-        $Render->setDescription("Cadastre suas escolas.");
-        $Render->setKeywords("cadastro de escolas, cadastro, escolas");
-        $Render->setDir("escola");
+        $Render->setTitle("Cargos");
+        $Render->setDescription("Cadastre seus cargos.");
+        $Render->setKeywords("cadastro de cargos, cadastro, escolas");
+        $Render->setDir("cargo");
         $Render->renderLayout();
     }
     }
