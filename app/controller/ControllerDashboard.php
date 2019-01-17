@@ -5,6 +5,8 @@ use Src\Classes\ClassRender;
 use Src\Interfaces\InterfaceView;
 
 class ControllerDashboard extends ClassRender implements InterfaceView{
+
+
     public function __construct()
     {
         $this->setTitle("Dashboard");

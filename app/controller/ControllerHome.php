@@ -14,6 +14,14 @@ class ControllerHome extends ClassRender implements InterfaceView{
         $this->setDir("home");
         $this->renderLayout();
     }
+
+    // public function geraHash($valor)
+    // {
+    // 	$valor = md5($valor);
+    // 	$valor = sha1($valor);
+    // 	$valor = md5($valor);
+    // 	echo sha1($valor);
+    // }
 }
 
 ?>

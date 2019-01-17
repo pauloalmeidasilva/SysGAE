@@ -3,6 +3,9 @@
 		<div class="col-sm-3 shadow-lg" style='background-color: #fff; position: absolute; height: 100%; padding-top: 175px;'>
 	        <form action="">
 	        	<h3 class="text-center">Login</h3>
+
+	        	<!-- <p><?php $this->geraHash("abc123") ?></p> -->
+
 	        	<br>
 	        	<input type="text" class="form-control" id="prontuario" placeholder="Prontuário">
 	        	<br>
