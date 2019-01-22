@@ -20,13 +20,13 @@ class ControllerAluno extends ClassAluno{
     public function __construct()
     {
         if(count($this->parseUrl())==1) {
-        $Render=new ClassRender();
-        $Render->setTitle("Aluno");
-        $Render->setDescription("Cadastre suas alunos.");
-        $Render->setKeywords("cadastro de alunos, cadastro, escolas");
-        $Render->setDir("aluno");
-        $Render->renderLayout();
-    }
+            $Render=new ClassRender();
+            $Render->setTitle("Aluno");
+            $Render->setDescription("Cadastre suas alunos.");
+            $Render->setKeywords("cadastro de alunos, cadastro, escolas");
+            $Render->setDir("aluno");
+            $Render->renderLayout();
+        }
     }
 
     #Função responsável por recuperar os dados informados pelo usuário.

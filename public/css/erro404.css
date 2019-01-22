@@ -1,0 +1,24 @@
+body {
+    background: #007bff;
+}
+
+.header {
+    height: 100px;
+}
+
+.imagem {
+    width: 300px;
+}
+
+.logo {
+    width: 150px;
+}
+
+.texto {
+    color: white;
+    font-size: 16px;
+}
+
+.textbox {
+
+}

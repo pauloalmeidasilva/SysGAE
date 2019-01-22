@@ -5,13 +5,13 @@ namespace App\Controller;
 use Src\Classes\ClassRender;
 use Src\Interfaces\InterfaceView;
 
-class ControllerHome extends ClassRender implements InterfaceView{
+class Controller404 extends ClassRender implements InterfaceView{
     public function __construct()
     {
-        $this->setTitle("Página Inicial");
-        $this->setDescription("Esse é o site do Sistema SysGAE");
-        $this->setKeywords("sysgae, gerenciamento escolar, sistema");
-        $this->setDir("home");
+        $this->setTitle("Página não Encontrada!");
+        $this->setDescription("Caso esta página tenha sido apresentada, contate a empresa.");
+        $this->setKeywords("sysgae, gerenciamento escolar, sistema, 404, pagina inexistente");
+        $this->setDir("404");
         $this->renderLayout();
     }
 

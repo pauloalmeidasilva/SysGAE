@@ -15,8 +15,8 @@ class ClassRoutes{
         $I=$Url[0];
 
         $this->Rota=array(
-            ""=>"ControllerHome",
-            "home"=>"ControllerHome",
+            ""=>"ControllerLogin",
+            "login"=>"ControllerLogin",
             "dashboard"=>"ControllerDashboard",
             "escola"=>"ControllerEscola",
             "cargo"=>"ControllerCargo",
@@ -32,10 +32,10 @@ class ClassRoutes{
             if(file_exists(DIRREQ."app/controller/{$this->Rota[$I]}.php")){
                 return $this->Rota[$I];
             }else{
-                return "ControllerHome";
+                return "Controller404";
             }
         }else{
-            return "ControllerHome";
+            return "Controller404";
         }
     }
 }

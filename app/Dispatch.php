@@ -11,6 +11,12 @@ class Dispatch extends ClassRoutes{
     private $Param=[];
     private $Obj;
 
+    protected function getMethod(){return $this->Method;}
+    public function setMethod($Method){$this->Method = $Method;}
+
+    protected function getParam(){return $this->Param;}
+    public function setParam($Param){$this->Param = $Param;}
+
     #Método Construtor
     public function __construct()
     {
@@ -33,10 +39,10 @@ class Dispatch extends ClassRoutes{
     private function addMethod()
     {
     	if(method_exists($this->Obj, $this->parseUrl()[1])){
-        $this->setMethod("{$this->parseUrl()[1]}");
-        self::addParam();
-        call_user_func_array([$this->Obj,$this->getMethod()],$this->getParam());
-    }
+            $this->setMethod("{$this->parseUrl()[1]}");
+            self::addParam();
+            call_user_func_array([$this->Obj,$this->getMethod()],$this->getParam());
+        }
     }
 
     #Método de adição de parâmetros do controller
