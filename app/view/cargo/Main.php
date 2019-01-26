@@ -7,10 +7,10 @@
 				<div class="sidebar-sticky">
 					<h6><strong>Cadastro de Cargos</strong></h6>
 					<ul class="nav flex-column">
-						<li class="nav-item"><!-- <a class="nav-link" data-target="#modalteste">Novo Cargo</a> <-->
+						<li class="nav-item"><!-- <a class="nav-link" data-target="#modalteste">Novo Cargo</a> -->
 							<button class="btn btn-link nav-link" data-target="#novo-modal" data-toggle="modal">Novo Cargo</button>
-						</--></li>
-						<li class="nav-item"><a class="nav-link" href="#">Exibir Cargos</a></li>
+						</li>
+						<li class="nav-item"><a class="btn btn-link nav-link text-left" href="<?php echo DIRPAGE.'cargo'; ?>" style="">Exibir Cargos</a></li>
 						<li><hr></li>
 						<li><a class="btn btn-primary mx-auto d-block" href="<?php echo DIRPAGE.'dashboard'; ?>" style="width: 100px;">Voltar</a></li>
 					</ul>
@@ -53,14 +53,13 @@
 				</div>
 				<div class="modal-body">
 					<form action="<?php echo DIRPAGE.'cargo/cadastrar'; ?>" method="post">
-						<input type="hidden" class="form-control" id="codigo-cargo" name="codigo-cargo" value="0">
 			    		<div class="form-group">
 			    			<label for="nome-cargo">Nome do Cargo</label>
 			    			<input type="text" class="form-control" name="nome-cargo" placeholder="Nome">
 			    		</div>
 			    		<div class="form-group">
-			    			<label for="end-cargo">Descrição</label>
-			    			<textarea class="form-control" rows="3" name="end-cargo" placeholder="Descrição do Cargo"></textarea>
+			    			<label for="des-cargo">Descrição</label>
+			    			<textarea class="form-control" rows="3" name="des-cargo" placeholder="Descrição do Cargo"></textarea>
 			    		</div>
 			    		<div class="modal-footer">
 			    			<button type="submit" class="btn btn-primary">Cadastrar</button>
@@ -71,3 +70,28 @@
 		</div>
 	</div>
 	<!-- Fim da Modal "Novo" -->
+
+	<!-- Início da modal "Excluir"-->
+	<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header bg-danger text-white" style="color: black;">
+					<h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-trash-alt"></i> - Tem Certeza que deseja excluir este cargo?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" style="color: black;">
+					<form action="../php/cadcargo.php" method="post">
+						<input type="hidden" class="form-control" id="codigo-cargo" name="codigo-cargo" value="<?php echo $dados['crg_codigo'] ?>">
+						<input type="hidden" class="form-control" name="oper" value="deletar">
+						<p><strong><?php echo $dados['crg_nome'] ?></strong></p>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-danger">Excluir</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Fim da Modal -->

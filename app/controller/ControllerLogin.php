@@ -32,13 +32,13 @@ class ControllerLogin extends ClassRender implements InterfaceView{
     {
         try {
             //var_dump($_POST['senha']);
-            if(isset($_POST['prontuario'])){ $this->prontuario = $_POST['prontuario']; }
+            if(isset($_POST['user-prontuario'])){ $this->prontuario = $_POST['user-prontuario']; }
 
             // Essa linha que não funciona direito
             // preciso descobrir o porquê
-            if(isset($_POST['teste'])){ $this->senha = filter_input( INPUT_POST, 'teste', FILTER_SANITIZE_SPECIAL_CHARS); }
+            if(isset($_POST['user-senha'])){ $this->senha = filter_input( INPUT_POST, 'user-senha', FILTER_SANITIZE_SPECIAL_CHARS); }
         } catch (Exception $e) {
-            
+            echo "não deu certo";
         }
         
 
@@ -48,6 +48,8 @@ class ControllerLogin extends ClassRender implements InterfaceView{
     {
         $user = new ClassLogin();
         $this->recuperaVar();
+        var_dump($prontuario);
+        var_dump($senha);
         $dados = $user->selecionaUsuario($this->prontuario);
         
         if ($senha == $dados[0]['senha']) {

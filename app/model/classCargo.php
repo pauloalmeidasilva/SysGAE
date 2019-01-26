@@ -19,6 +19,7 @@
         #Acesso ao banco de dados com seleção
         protected function listarCargos()
         {
+            $Array = null;
             $BFetch=$this->Db=$this->conexaoDB()->prepare("select * from cargo");
             $BFetch->execute();
 
@@ -27,6 +28,7 @@
                 $Array[$I]=['Id'=>$Fetch['crg_codigo'],'Nome'=>$Fetch['crg_nome'],'Descricao'=>$Fetch['crg_descricao']];
                 $I++;
             }
+
             return $Array;
         }
 
