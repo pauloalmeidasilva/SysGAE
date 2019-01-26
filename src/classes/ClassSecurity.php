@@ -6,44 +6,30 @@ class ClassSecurity{
 
 	#Método para gerar Hash
     public function geraHash($valor){
+        //return password_hash($valor, PASSWORD_DEFAULT);
     	return md5(sha1(md5(sha1($valor))));
     }
 
+    // #Método para gerar Hash
+    // public function geraHash($valor){
+    //     return password_hash($valor, PASSWORD_DEFAULT);
+    // }
+
+    // #Método para verificar Hash
+    // public function verificaHash($valor, $hash){
+    //     return password_verify($valor, $hash);
+    // }
+
     #Método para criptografar
-    public function encSenha($senha, $chave){
-		/*
-		# Esse método tem um erro de reconhecimento no valor do caracter ascii
-		*/
-
-    	$senhaCript = "";
-    	$J = 0;
-
-    	for ($I = 0; $I <= strlen($senha) - 1; $I++) {
-    		if (ord($senha[$I]) == 32)
-    			continue;
-    		$senhaCript += chr((ord($senha[$I]) + ord($chave[$J]) - 2 * 65) % 26 + 65);
-    		$J = ($J + 1) % strLen($chave);
-    	}
-
-    	return $senhaCript;
+    public function encSenha($senha){
+		
+    	return base64_encode(base64_encode($senha));
     }
 
     #Método para criptografar
-    public function decSenha($senha, $chave){
-    	/*
-		# Esse método não foi testado ainda, talvez tenha o mesmo erro do
-		# método encSenha()
-		*/
-		
-    	$senhaDecript = "";
-    	$J = 0;
+    public function decSenha($senha){
 
-    	for ($I = 0; $I < strlen($senha); $I++) {
-    		$senhaDecript += ($senha[$I] - $chave[$J] + 26) % 26 + 65;
-    		$J = ($J + 1) % strLen($chave);
-    	}
-
-    	return $senhaDecript;
+    	return base64_decode(base64_decode($senha));
     }
 }
 
