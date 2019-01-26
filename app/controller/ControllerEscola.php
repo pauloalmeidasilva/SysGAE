@@ -20,13 +20,13 @@ class ControllerEscola extends ClassEscola{
     public function __construct()
     {
         if(count($this->parseUrl())==1) {
-        $Render=new ClassRender();
-        $Render->setTitle("Escola");
-        $Render->setDescription("Cadastre suas escolas.");
-        $Render->setKeywords("cadastro de escolas, cadastro, escolas");
-        $Render->setDir("escola");
-        $Render->renderLayout();
-    }
+            $Render=new ClassRender();
+            $Render->setTitle("Escola");
+            $Render->setDescription("Cadastre suas escolas.");
+            $Render->setKeywords("cadastro de escolas, cadastro, escolas");
+            $Render->setDir("escola");
+            $Render->renderLayout();
+        }
     }
 
     #Função responsável por recuperar os dados informados pelo usuário.

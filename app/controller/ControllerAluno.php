@@ -33,7 +33,7 @@ class ControllerAluno extends ClassAluno{
     private function recuperaVar()
     {
         if(isset($_POST['id'])){ $this->Id=$_POST['Id']; }
-        if(isset($_POST['nome'])){ $this->Nome=filter_input(INPUT_POST, 'Nome', FILTER_SANITIZE_SPECIAL_CHARS); }
+        if(isset($_POST['nome'])){ $this->nome=filter_input(INPUT_POST, 'Nome', FILTER_SANITIZE_SPECIAL_CHARS); }
         if(isset($_POST['endereco'])){ $this->endereco=filter_input(INPUT_POST, 'endereco', FILTER_SANITIZE_SPECIAL_CHARS); }
         if(isset($_POST['bairro'])){ $this->bairro=filter_input(INPUT_POST, 'bairro', FILTER_SANITIZE_SPECIAL_CHARS); }
         if(isset($_POST['cidade'])){ $this->cidade=filter_input(INPUT_POST, 'cidade', FILTER_SANITIZE_SPECIAL_CHARS); }
