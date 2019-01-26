@@ -8,13 +8,19 @@ Este projeto consiste num gerenciador escolar, dando a possibilidade ao usuário
 ## Característica
 
 ### Linguagens utilizadas
-* HTML 5
-* Javascript
-* PHP
-* MySQL
+* HTML 5;
+* Javascript;
+* PHP;
+* MySQL.
 
 ### Padrão utilizado
 * MVC
 
 ## Restrições
 Este sistema será desenvolvido exclusivamente para Desktop, não dando enfoque para dispositivos móveis
+
+## Procedimentos de instalação
+Após clonar ou fazer o download zip siga os seguintes passos para deixar esse projeto em funcionamento:
+
+* Atualize o composer que está no diretório "/src/";
+* Crie o banco de dados utilizando o arquivo sysgae2.sql que está no diretório "/app/Projeto/Banco de Dados/".
