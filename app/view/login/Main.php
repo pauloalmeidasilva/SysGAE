@@ -5,12 +5,10 @@
 	        	<h3 class="text-center">Login</h3>
 
 	        	<br>
-	        	<input type="text" class="form-control" id="prontuario" name="prontuario" placeholder="Prontuário">
+	        	<input type="text" class="form-control" name="prontuario" placeholder="Prontuário">
 	        	<br>
-				<input type="password" class="form-control" id="password" name="senha" placeholder="Senha">
+				<input type="password" class="form-control" name="senha" placeholder="Senha">
 				<br>
-				<!-- lembras de trocas a tag a por button -->
-				<!-- <a class="btn btn-success mx-auto d-block" href="<?php echo DIRPAGE.'dashboard'; ?>" style="width: 100px;">Iniciar</a> -->
 				<button type="submit" class="btn btn-success mx-auto d-block" style="width: 100px;">Iniciar</button>
 	        </form>
 	    </div>
