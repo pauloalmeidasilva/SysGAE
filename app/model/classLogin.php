@@ -10,7 +10,7 @@ class ClassLogin extends ClassConexao{
     #Retorna o Usuário e senha
 public function selecionaUsuario($Prontuario)
 {
-    $Array;
+    $Array = [];
     $BFetch=$this->Db=$this->conexaoDB()->prepare("select * from funcionario where fun_codigo = :prontuario");
     $BFetch->bindParam(":prontuario",$Prontuario,\PDO::PARAM_STR);
     $BFetch->execute();
@@ -26,6 +26,11 @@ public function selecionaUsuario($Prontuario)
             'cpf'=>$Fetch['fun_cpf'],
             'mae'=>$Fetch['fun_mae'],
             'pai'=>$Fetch['fun_pai'],
+            'rua'=>$Fetch['fun_rua'],
+            'bairro'=>$Fetch['fun_bairro'],
+            'cidade'=>$Fetch['fun_cidade'],
+            'cep'=>$Fetch['fun_cep'],
+            'estado'=>$Fetch['fun_uf'],
             'telefone'=>$Fetch['fun_telefone'],
             'email'=>$Fetch['fun_email'],
             'senha'=>$Fetch['fun_senha']

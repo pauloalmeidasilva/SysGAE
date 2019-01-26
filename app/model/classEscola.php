@@ -8,8 +8,18 @@ class ClassEscola extends ClassConexao{
     private $Db;
 
     #Cadastrará os clientes no sistema
-    protected function cadastrarEscola($nome, $endereco, $bairro, $cidade, $estado, $telefone, $email)
+    protected function cadastrarEscola($nome, $rua, $numero, $complemento, $bairro, $cidade, $cep, $estado, $telefone, $email)
     {
+        $this->Db=$this->conexaoDB()->prepare("INSERT INTO endereco(end_rua, end_numero, end_complemento, end_bairro, end_cidade, end_cep, end_uf) VALUES (:rua, :numero, :complemento, :bairro, :cidade, :cep, :estado)");
+        $this->Db->bindParam(":nome",$nome,\PDO::PARAM_STR);
+        $this->Db->bindParam(":endereco",$endereco,\PDO::PARAM_STR);
+        $this->Db->bindParam(":bairro",$bairro,\PDO::PARAM_STR);
+        $this->Db->bindParam(":cidade",$Cidade,\PDO::PARAM_STR);
+        $this->Db->bindParam(":estado",$estado,\PDO::PARAM_STR);
+        $this->Db->bindParam(":telefone",$telefone,\PDO::PARAM_STR);
+        $this->Db->bindParam(":email",$email,\PDO::PARAM_STR);
+        $this->Db->execute();
+
         $this->Db=$this->conexaoDB()->prepare("INSERT INTO escola (esc_nome, esc_rua, esc_bairro, esc_cidade, esc_uf, esc_telefone, esc_email) VALUES (:nome, :endereco, :bairro, :cidade, :estado, :telefone, :email)");
         $this->Db->bindParam(":nome",$nome,\PDO::PARAM_STR);
         $this->Db->bindParam(":endereco",$endereco,\PDO::PARAM_STR);
