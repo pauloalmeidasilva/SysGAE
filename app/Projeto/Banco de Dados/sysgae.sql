@@ -21,7 +21,7 @@ CREATE TABLE Funcionario (
     fun_nome VARCHAR(50) NOT NULL,
     fun_nascimento DATE NOT NULL,
     fun_sexo CHAR(1) NOT NULL,
-    FUN_certidao VARCHAR(40) NOT NULL,
+    fun_certidao VARCHAR(40) NOT NULL,
     fun_rg VARCHAR(15),
     fun_cpf VARCHAR(15),
     fun_mae VARCHAR(50) NOT NULL,
