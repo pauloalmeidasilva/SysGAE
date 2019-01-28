@@ -41,7 +41,7 @@
 	</div>
 	<!-- FIM DA DASHBOARD -->
 
-	<!-- Início da modal "Novo"-->
+	<!-- INICIO DA MODAL "NOVO" -->
 	<div class="modal fade" id="novo-modal" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
@@ -69,9 +69,65 @@
 			</div>
 		</div>
 	</div>
-	<!-- Fim da Modal "Novo" -->
+	<!-- FIM DA MODAL "NOVO" -->
 
-	<!-- Início da modal "Excluir"-->
+	<!-- INÍCIO DA MODAL "VISUALIZAR" -->
+	<div class="modal fade" id="visualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header" style="color: black;">
+					<h5 class="modal-title" id="cst-nome-cargo"></h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" style="color: black;">
+					<dl class="row">
+						<dt class="col-sm-3">Descrição</dt>
+						<dd class="col-sm-9" id="cst-des-cargo"></dd>
+					</dl>
+					<!-- <div class="container">
+			    		<p>Descrição</p>
+			    		<p id="cst-des-cargo"></p>
+			    	</div> -->		
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- FIM DA MODAL "VISUALIZAR" -->
+
+	<!-- INICIO DA MODAL "ALTERAR"-->
+	<div class="modal fade" id="alterar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Alterar</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="<?php echo DIRPAGE.'cargo/alterar'; ?>" method="post">
+						<input type="hidden" class="form-control" id="alt-id-cargo" name="codigo-cargo">
+			    		<div class="form-group">
+			    			<label for="nome-cargo">Nome do Cargo</label>
+			    			<input type="text" class="form-control" id="alt-nome-cargo" name="nome-cargo" placeholder="Nome">
+			    		</div>
+			    		<div class="form-group">
+			    			<label for="desc-cargo">Descrição</label>
+			    			<textarea class="form-control" rows="3" id="alt-des-cargo" name="desc-cargo" placeholder="Descrição do Cargo"></textarea>
+			    		</div>
+			    		<div class="modal-footer">
+			    			<button type="submit" class="btn btn-primary">Alterar</button>
+			    		</div>
+			    	</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- FIM DA MODAL "ALTERAR"-->
+
+	<!-- INICIO DA MODAL "EXCLUIR" -->
 	<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
@@ -82,10 +138,9 @@
 					</button>
 				</div>
 				<div class="modal-body" style="color: black;">
-					<form action="../php/cadcargo.php" method="post">
-						<input type="hidden" class="form-control" id="codigo-cargo" name="codigo-cargo" value="<?php echo $dados['crg_codigo'] ?>">
-						<input type="hidden" class="form-control" name="oper" value="deletar">
-						<p><strong><?php echo $dados['crg_nome'] ?></strong></p>
+					<form action="<?php echo DIRPAGE.'cargo/deletar'; ?>" method="post">
+						<input type="hidden" class="form-control" id="del-id-cargo" name="codigo-cargo">
+						<h5 id="del-nome-cargo"></h5>
 						<div class="modal-footer">
 							<button type="submit" class="btn btn-danger">Excluir</button>
 						</div>
@@ -94,4 +149,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- Fim da Modal -->
+	<!-- FIM DA MODAL "EXCLUIR" -->
+
+	

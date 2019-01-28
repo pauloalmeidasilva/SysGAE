@@ -7,16 +7,16 @@
 
         private $Db;
 
-        #Cadastrará os clientes no sistema
+        #Cadastro de um novo Cargo
         protected function cadastrarCargo($nome, $descricao)
         {
-            $this->Db=$this->conexaoDB()->prepare("INSERT INTO cargo (crg_nome, crg_descricao) VALUES (:nome, :descricao)");
+            $this->Db=$this->conexaoDB()->prepare("insert into cargo (crg_nome, crg_descricao) values (:nome, :descricao)");
             $this->Db->bindParam(":nome",$nome,\PDO::PARAM_STR);
             $this->Db->bindParam(":descricao",$descricao,\PDO::PARAM_STR);
             $this->Db->execute();
         }
 
-        #Acesso ao banco de dados com seleção
+        #Consulta dos cargos para tabela
         protected function listarCargos()
         {
             $Array = null;
@@ -32,12 +32,24 @@
             return $Array;
         }
 
-        #Deletar direto no banco
-        protected function deletarClientes($Id)
+        #Alteração de dados de um determinado Cargo
+        protected function alterarCargo($Array)
         {
-            $BFetch=$this->Db=$this->conexaoDB()->prepare("delete from teste where Id=:id");
-            $BFetch->bindParam(":id",$Id,\PDO::PARAM_INT);
+            $BFetch=$this->Db=$this->conexaoDB()->prepare("update cargo det crg_nome = :nome, crg_descricao = :descricao where crg_codigo = :id");
+            $this->Db->bindParam(":id",$Array['id'],\PDO::PARAM_INT);
+            $this->Db->bindParam(":nome",$Array['nome'],\PDO::PARAM_STR);
+            $this->Db->bindParam(":descricao",$Array['descricao'],\PDO::PARAM_STR);
             $BFetch->execute();
+        }
+
+        #Deletar direto no banco
+        protected function deletarCargos($id)
+        {
+            var_dump($id);
+            $BFetch=$this->Db=$this->conexaoDB()->prepare("delete from cargos where (crg_codigo = :id)");
+            $this->Db->bindParam(":id",$id,\PDO::PARAM_INT);
+            $BFetch->execute();
+            var_dump($BFetch);
         }
     }
 ?>
