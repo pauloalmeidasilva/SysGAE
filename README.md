@@ -1,11 +1,11 @@
 # Sistema de Gerenciamento Administrativo Escolar - SysGAE
 
 ## Indice
--[Descrição](#Descriçao)
--[Característica](#Característica)
--[Restrições](#Restrições)
--[Procedimentos de instalação](#Procedimentos-de-instalação)
--[Bugs encontrados](#Bugs-encontrados)
+- [Descrição](#Descriçao)
+- [Característica](#Característica)
+- [Restrições](#Restrições)
+- [Procedimentos de instalação](#Procedimentos-de-instalação)
+- [Bugs encontrados](#Bugs-encontrados)
 
 ## Descrição
 Projeto final para conclusão do curso Tecnologia em análise e Desenvolvimento de Sistemas.
