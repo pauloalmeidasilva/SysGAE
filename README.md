@@ -24,3 +24,13 @@ Após clonar ou fazer o download zip siga os seguintes passos para deixar esse p
 
 * Atualize o composer que está no diretório "/src/";
 * Crie o banco de dados utilizando o arquivo sysgae2.sql que está no diretório "/app/Projeto/Banco de Dados/".
+
+
+## Bugs encontrados
+
+### Login
+Variável da senha perde o valor e não compara com a senha que retornou do banco de dados.
+
+### CRUD Cargo
+Preciso clicar 2 vezes em cada link da pagina para ela funcionar.
+Método deletar não apaga o registro quando solicitado.

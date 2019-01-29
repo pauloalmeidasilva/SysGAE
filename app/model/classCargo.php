@@ -17,10 +17,12 @@
         }
 
         #Consulta dos cargos para tabela
-        protected function listarCargos()
+        protected function listarCargos($pagina, $registro)
         {
             $Array = null;
-            $BFetch=$this->Db=$this->conexaoDB()->prepare("select * from cargo");
+            $BFetch=$this->Db=$this->conexaoDB()->prepare("select * from cargo limit :pagina, :registro");
+            $this->Db->bindParam(":pagina",$pagina,\PDO::PARAM_INT);
+            $this->Db->bindParam(":registro",$registro,\PDO::PARAM_INT);
             $BFetch->execute();
 
             $I=0;
@@ -30,6 +32,17 @@
             }
 
             return $Array;
+        }
+
+        #Consulta dos cargos para tabela
+        protected function contarCargos()
+        {
+            $BFetch=$this->Db=$this->conexaoDB()->prepare("select count(crg_codigo) as quantidade from cargo");
+            $BFetch->execute();
+
+            $qtdregistro=$BFetch->fetch(\PDO::FETCH_ASSOC);
+
+            return $qtdregistro['quantidade'];
         }
 
         #Alteração de dados de um determinado Cargo
@@ -45,11 +58,9 @@
         #Deletar direto no banco
         protected function deletarCargos($id)
         {
-            var_dump($id);
             $BFetch=$this->Db=$this->conexaoDB()->prepare("delete from cargos where (crg_codigo = :id)");
             $this->Db->bindParam(":id",$id,\PDO::PARAM_INT);
             $BFetch->execute();
-            var_dump($BFetch);
         }
     }
 ?>

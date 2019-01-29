@@ -25,7 +25,10 @@
 				</div>
 				<div class="container">
 					<?php
-					echo $_SESSION['tabela'];
+						echo $_SESSION['tabela'];
+						if (isset($_SESSION['paginacao'])) {
+							echo $_SESSION['paginacao'];
+						}
 					?>
 				</div>
 
@@ -45,8 +48,8 @@
 	<div class="modal fade" id="novo-modal" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Cadastrar Cargo</h5>
+				<div class="modal-header bg-primary">
+					<h5 class="modal-title text-white" id="exampleModalLabel">Cadastrar Cargo</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -59,7 +62,7 @@
 			    		</div>
 			    		<div class="form-group">
 			    			<label for="des-cargo">Descrição</label>
-			    			<textarea class="form-control" rows="3" name="des-cargo" placeholder="Descrição do Cargo"></textarea>
+			    			<textarea class="form-control" rows="5" name="des-cargo" placeholder="Descrição do Cargo"></textarea>
 			    		</div>
 			    		<div class="modal-footer">
 			    			<button type="submit" class="btn btn-primary">Cadastrar</button>
@@ -75,8 +78,8 @@
 	<div class="modal fade" id="visualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
-				<div class="modal-header" style="color: black;">
-					<h5 class="modal-title" id="cst-nome-cargo"></h5>
+				<div class="modal-header bg-info" style="color: black;">
+					<h5 class="modal-title text-white" id="cst-nome-cargo"></h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -100,7 +103,7 @@
 	<div class="modal fade" id="alterar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header bg-warning">
 					<h5 class="modal-title" id="exampleModalLabel">Alterar</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -115,7 +118,7 @@
 			    		</div>
 			    		<div class="form-group">
 			    			<label for="desc-cargo">Descrição</label>
-			    			<textarea class="form-control" rows="3" id="alt-des-cargo" name="desc-cargo" placeholder="Descrição do Cargo"></textarea>
+			    			<textarea class="form-control" rows="5" id="alt-des-cargo" name="desc-cargo" placeholder="Descrição do Cargo"></textarea>
 			    		</div>
 			    		<div class="modal-footer">
 			    			<button type="submit" class="btn btn-primary">Alterar</button>

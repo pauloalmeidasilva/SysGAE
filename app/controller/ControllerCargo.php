@@ -3,8 +3,9 @@ namespace App\Controller;
 
 use Src\Classes\ClassRender;
 use App\Model\ClassCargo;
+use Src\Classes\ClassPagination;
 
-class ControllerCargo extends ClassCargo{
+class ControllerCargo extends ClassCargo {
 
     protected $id;
     protected $nome;
@@ -15,15 +16,17 @@ class ControllerCargo extends ClassCargo{
     public function __construct()
     {
         session_start();
+        $Render=new ClassRender();
         if(count($this->parseUrl())==1) {
-            $Render=new ClassRender();
             $Render->setTitle("Cargos");
             $Render->setDescription("Cadastre seus cargos.");
             $Render->setKeywords("cadastro de cargos, cadastro, escolas");
             $Render->setDir("cargo");
             $Render->renderLayout();
+            $this->selecionar();
         }
-        $this->selecionar();
+        $Render->setDir("cargo");
+        $Render->renderLayout();
     }
 
     //Função responsável por recuperar os dados informados pelo usuário.
@@ -40,20 +43,24 @@ class ControllerCargo extends ClassCargo{
         $this->recuperarVar();
         $this->cadastrarCargo($this->nome, $this->descricao);
         $_SESSION['aviso']="<div class='alert alert-success' role='alert' style='width: 300px; margin-left: auto; margin-right: auto; text-align: center;'>Cadastro realizado com sucesso! <a href=".DIRPAGE."cargo>Clique aqui</a> para atualizar a página.</div>";
-        
-        header('Location:'.DIRPAGE.'cargo');
     }
 
     //Selecionar e exibir os dados do banco de dados
-    public function selecionar()
+    public function selecionar($pagina = 1)
     {
-        $list=$this->listarCargos();
+        $registro = 5;
+        $paginacao = new ClassPagination();
+        $reginicial = ($registro * $pagina) - $registro;
+        $caminho = DIRPAGE.'cargo/selecionar';
+
+        $list=$this->listarCargos($reginicial, $registro);
+        $totalreg=$this->contarCargos();
 
         if (!is_null($list)) {
-            $_SESSION['tabela'] = "<table class='table table-hover'><thead><tr><th scope='col'>ID</th><th scope='col'>Nome</th><th scope='col'>Ação</th></tr></thead>";            
+            $_SESSION['tabela'] = "<table class='table table-sm table-hover'><thead class='thead-light'><tr><th class='text-center' scope='col' style='width:10%'>ID</th><th class='text-left' scope='col' style='width:70%'>Nome</th><th class='text-center' scope='col' style='width:40%'>Ação</th></tr></thead>";            
             
             foreach($list as $item){
-                $_SESSION['tabela'] .= "<tbody><tr><th>$item[Id]</th><td>$item[Nome]</td><td><button type='button' id='cst$item[Id]' class='btn btn-info btn-sm' data-toggle='modal' data-target='#visualizar' data-nome='$item[Nome]' data-descricao='$item[Descricao]' onclick='consultarCargo($item[Id])'><i class='fas fa-search'></i></button>";
+                $_SESSION['tabela'] .= "<tbody><tr><th class='text-center' scope='row' >$item[Id]</th><td>$item[Nome]</td><td class='text-center'><button type='button' id='cst$item[Id]' class='btn btn-info btn-sm' data-toggle='modal' data-target='#visualizar' data-nome='$item[Nome]' data-descricao='$item[Descricao]' onclick='consultarCargo($item[Id])'><i class='fas fa-search'></i></button>";
 
                 $_SESSION['tabela'] .= "<button type='button' id='alt$item[Id]' class='btn btn-warning btn-sm' data-toggle='modal' data-target='#alterar' data-nome='$item[Nome]' data-descricao='$item[Descricao]' onclick='alterarCargo($item[Id])'><i class='fas fa-edit'></i></button>";
 
@@ -61,6 +68,9 @@ class ControllerCargo extends ClassCargo{
             }
 
             $_SESSION['tabela'] .= "</tbody></table>";
+
+            $_SESSION['paginacao'] = $paginacao->gerarPaginacao($pagina, ceil($totalreg/$registro), $caminho);
+            //var_dump($_SESSION['paginacao']);
         }
         else {
             $_SESSION['tabela'] = "<div class='alert alert-danger text-center' role='alert'>Nenhum cargo encontrado</div>";
@@ -72,21 +82,17 @@ class ControllerCargo extends ClassCargo{
     {
         $this->recuperarVar();
 
-        $array = array('id'  => $id, 'nome' => $nome, 'descricao' => $descricao);
+        $array = array('id'  => $this->id, 'nome' => $this->nome, 'descricao' => $this->descricao);
 
         $this->alterarCargo($array);
         $_SESSION['aviso']="<div class='alert alert-success' role='alert' style='width: 300px; margin-left: auto; margin-right: auto; text-align: center;'>Cadastro realizado com sucesso! <a href=".DIRPAGE."cargo>Clique aqui</a> para atualizar a página.</div>";
-        
-        header('Location:'.DIRPAGE.'cargo');
     }
 
     //Deletar dados do DB
     public function deletar()
     {
-        // Está com problemas de guardar o valor do post na variável id
-        //$this->recuperarVar();
-        var_dump($_POST['codigo-cargo']);
-        $this->deletarCargos($_POST['codigo-cargo']); //$id
+        $this->recuperarVar();
+        $this->deletarCargos($this->id);
 
         $_SESSION['aviso']="<div class='alert alert-success' role='alert' style='width: 300px; margin-left: auto; margin-right: auto; text-align: center;'>Cargo excluído com sucesso! <a href=".DIRPAGE."cargo>Clique aqui</a> para atualizar a página.</div>";
 
