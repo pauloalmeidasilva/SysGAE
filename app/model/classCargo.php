@@ -48,7 +48,7 @@
         #Alteração de dados de um determinado Cargo
         protected function alterarCargo($Array)
         {
-            $BFetch=$this->Db=$this->conexaoDB()->prepare("update cargo det crg_nome = :nome, crg_descricao = :descricao where crg_codigo = :id");
+            $BFetch=$this->Db=$this->conexaoDB()->prepare("update cargo set crg_nome = :nome, crg_descricao = :descricao where crg_codigo = :id");
             $this->Db->bindParam(":id",$Array['id'],\PDO::PARAM_INT);
             $this->Db->bindParam(":nome",$Array['nome'],\PDO::PARAM_STR);
             $this->Db->bindParam(":descricao",$Array['descricao'],\PDO::PARAM_STR);
@@ -58,7 +58,7 @@
         #Deletar direto no banco
         protected function deletarCargos($id)
         {
-            $BFetch=$this->Db=$this->conexaoDB()->prepare("delete from cargos where (crg_codigo = :id)");
+            $BFetch=$this->Db=$this->conexaoDB()->prepare("delete from cargo where (crg_codigo = :id)");
             $this->Db->bindParam(":id",$id,\PDO::PARAM_INT);
             $BFetch->execute();
         }

@@ -23,21 +23,7 @@
 				<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 					<h1 class="h2">Cargos</h1>
 				</div>
-				<div class="container">
-					<?php
-						echo $_SESSION['tabela'];
-						if (isset($_SESSION['paginacao'])) {
-							echo $_SESSION['paginacao'];
-						}
-					?>
-				</div>
-
-				<?php
-					if (isset($_SESSION['aviso'])) {
-						echo $_SESSION['aviso'];
-						$_SESSION['aviso'] = null;
-					}
-				?>
+				
 			</main>
 			<!-- FIM DO CONTEÚDO PRINCIPAL -->
 		</div>
@@ -62,7 +48,7 @@
 			    		</div>
 			    		<div class="form-group">
 			    			<label for="des-cargo">Descrição</label>
-			    			<textarea class="form-control" rows="5" name="des-cargo" placeholder="Descrição do Cargo"></textarea>
+			    			<textarea class="form-control" rows="5" name="desc-cargo" placeholder="Descrição do Cargo"></textarea>
 			    		</div>
 			    		<div class="modal-footer">
 			    			<button type="submit" class="btn btn-primary">Cadastrar</button>
