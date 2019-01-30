@@ -30,17 +30,9 @@ class ControllerLogin extends ClassRender implements InterfaceView{
     #Função responsável por recuperar os dados informados pelo usuário.
     private function recuperaVar()
     {
-        try {
-            //var_dump($_POST['senha']);
-            if(isset($_POST['user-prontuario'])){ $this->prontuario = $_POST['user-prontuario']; }
+            if(isset($_POST['user-prontuario'])){ $this->prontuario = filter_input( INPUT_POST, 'user-prontuario', FILTER_SANITIZE_NUMBER_INT); }
 
-            // Essa linha que não funciona direito
-            // preciso descobrir o porquê
-            if(isset($_POST['user-senha'])){ $this->senha = filter_input( INPUT_POST, 'user-senha', FILTER_SANITIZE_SPECIAL_CHARS); }
-        } catch (Exception $e) {
-            echo "não deu certo";
-        }
-        
+            if(isset($_POST['user-senha'])){ $this->senha = filter_input( INPUT_POST, 'user-senha', FILTER_SANITIZE_STRING); }
 
     }
 
@@ -48,11 +40,13 @@ class ControllerLogin extends ClassRender implements InterfaceView{
     {
         $user = new ClassLogin();
         $this->recuperaVar();
-        var_dump($prontuario);
-        var_dump($senha);
         $dados = $user->selecionaUsuario($this->prontuario);
+        var_dump($this->prontuario);
+        var_dump($this->senha);
+        var_dump($dados);
+
         
-        if ($senha == $dados[0]['senha']) {
+        if ($this->senha == $dados[0]['senha']) {
             echo "estou dentro do if";
             //header('Location:'.DIRPAGE.'dashboard');
         }
