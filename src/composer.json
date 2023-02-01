@@ -10,7 +10,7 @@
     
     "require": {
         "phpmailer/phpmailer": "^6.0",
-        "dompdf/dompdf": "^0.8.2"
+        "dompdf/dompdf": "^2.0.2"
     },
 
     "autoload": {
